@@ -1,1 +1,1 @@
-# star-jar
+# Star Jar
