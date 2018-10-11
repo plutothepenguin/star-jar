@@ -1,0 +1,10 @@
+.loading {
+  height: 5px;
+  width: 0px;
+  background-color: black;
+  transition: 5s;
+}
+img {
+  width: 300px;
+  height: 300px;
+}

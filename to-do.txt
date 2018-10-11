@@ -1,0 +1,20 @@
+ - add bootstrap (make mobile compatible)
+ - let's encrypt
+ - add google analytics
+ - get icon
+ - take sexy picture of jar
+ - take 3 reg pics of jar (dif colors)
+ - maybe add share buttons (open graph tags)
+ - beige color??
+ - header, footer, contact form (in footer maybe? or separate)
+    - add white with black shadow or something as header
+ - testemonials when we get them
+ - https://github.com/marketplace/imgbot
+ - include call to actions
+ - descriptions for everything
+ - use <strong> for seo
+ - alt tags for images
+ - security (cloudflare?)
+ - add a proper description
+ - loading spinner
+ - dud add a super sexy 404 page with like a parallax and penguins and oh my god it'll be great
