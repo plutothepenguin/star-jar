@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="description" content="Description">
+  <title>Star Jar</title>
+
+  <link rel="stylesheet" href="source/slideshow.css" type="text/css">
+
+</head>
+
+<body>
+
+  <!-- start of slideshow -->
+  <div class="slide-cont">
+    <!-- image -->
+    <div class="img-cont">
+      <img src="source/peng1.jpg" class="slide-img active-img" alt="penguin1">
+      <img src="source/peng2.jpg" class="slide-img" alt="penguin2">
+      <img src="source/peng3.jpg" class="slide-img" alt="penguin3">
+      <div class="loading"></div>
+    </div>
+    <!-- end of image/loader -->
+    <!-- slideshow buttons -->
+    <div class="button-cont">
+      <div class="big-button" onclick="Switch(1)">
+        <div class="button active-button"></div>
+      </div>
+      <div class="big-button" onclick="Switch(2)">
+        <div class="button"></div>
+      </div>
+      <div class="big-button" onclick="Switch(3)">
+        <div class="button"></div>
+      </div>
+    </div>
+    <!-- end of slideshow buttons -->
+  </div>
+  <!-- end of slideshow -->
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="source/functions.js"></script>
+  <script src="source/slideshow.js"></script>
+
+</body>
+
+</html>
