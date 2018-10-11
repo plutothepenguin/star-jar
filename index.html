@@ -16,8 +16,33 @@
 
 <body>
 
-  <img src="source/peng1.jpg" class="slideshow-pic" alt="penguin1">
-  <div class="loading"></div>
+  <!-- start of slideshow -->
+  <div class="slide-cont">
+    <!-- image -->
+    <div class="img-cont">
+      <img src="source/peng1.jpg" class="slide-img" alt="penguin1">
+      <div class="loading"></div>
+    </div>
+    <!-- end of image/loader -->
+    <!-- slideshow buttons -->
+    <div class="button-cont">
+      <div class="big-button" onclick="clickSwitch(0)">
+        <div class="button active"></div>
+      </div>
+      <div class="big-button" onclick="clickSwitch(1)">
+        <div class="button"></div>
+      </div>
+      <div class="big-button" onclick="clickSwitch(2)">
+        <div class="button"></div>
+      </div>
+    </div>
+    <!-- end of slideshow buttons -->
+  </div>
+  <!-- end of slideshow -->
+
+
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="source/functions.js"></script>
   <script src="source/main.js"></script>

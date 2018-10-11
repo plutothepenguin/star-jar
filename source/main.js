@@ -1,27 +1,25 @@
-// replace await sleep with something else
+// pics to scroll through
 pics = ['peng1.jpg', 'peng2.jpg', 'peng3.jpg'];
+$('.loading').css('width', '300px');
 
-function switchPic(z) {
-  $('.loading').css('transition', '5s');
-  $('.loading').css('width', '300px');
-
-  async function undo() {
-    await sleep(5000);
-    $('.loading').css('transition', '1s');
-    $('.loading').css('width', '0px');
-    $('.slideshow-pic').attr("src", "source/" + pics[z]);
-  }
-  undo();
+function autoswitch(y) {
+  $(".slide-img").attr("src", "source/peng" + y + ".jpg");
 }
-switchPic(1);
-// for (var x = 2; x < 100; x++) {
-//   if (x % 3 == 0) {
-//     switchPic(2);
-//   }
-//   if (x % 2 == 0) {
-//     switchPic(1);
-//   }
-//   else {
-//     switchPic(0);
-//   }
-// }
+async function autoswitchRun() {
+  for (var i = 2; i < 100; i++) {
+    await sleep(5000);
+    if (i % 3 == 0) {
+      autoswitch(3);
+      console.log("3");
+    }
+    else if ((i-2) % 3 == 0 || i == 2) {
+      autoswitch(2);
+      console.log("2");
+    }
+    else {
+      autoswitch(1);
+      console.log("1");
+    }
+  }
+}
+autoswitchRun();
