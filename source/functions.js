@@ -12,8 +12,3 @@
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
-function clickSwitch(x) {
-  $('.slide-img').attr('src', 'source/' + pics[x]);
-  $('.active').removeClass('active');
-  $('.button-cont .big-button:nth-child(' + (x+1) + ') .button').addClass('active');
-}

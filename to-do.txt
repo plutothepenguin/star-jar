@@ -17,4 +17,5 @@
  - security (cloudflare?)
  - add a proper description
  - loading spinner
+ - fix clicking on slideshow while new pic is coming
  - dud add a super sexy 404 page with like a parallax and penguins and oh my god it'll be great

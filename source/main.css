@@ -14,7 +14,7 @@
   height: 5px;
   width: 0px;
   background-color: #e0cca3;
-  transition: 5s;
+  transition: 6s ease-in;
   margin: 0;
   padding: 0;
   position: absolute;
@@ -27,6 +27,7 @@
   position: relative;
   margin: 0;
   padding: 0;
+  transition: 0.5s;
 }
 .button-cont {
   width: 98px;
