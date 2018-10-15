@@ -1,4 +1,4 @@
-// waits the specified number of miliseconds
+ // waits the specified number of miliseconds
 // call by making function async and using await sleep(ms)
 
 function sleep(ms) {

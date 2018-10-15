@@ -15,7 +15,12 @@
 ::-webkit-scrollbar-thumb {
   background-color: #e0cca3;
 }
-
+::-webkit-scrollbar-thumb:hover {
+  background-color: #d1b47b;
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: #e5c47e;
+}
 body {
   overflow-x: hidden;
   margin: 0;
@@ -64,10 +69,11 @@ body {
   letter-spacing: 10px;
   z-index: 10;
   text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+  color: #666;
   cursor: pointer;
 }
 .header-item:hover {
-  color: black;
+  color: #e0cca3;
   text-shadow: 0px 0px 0px rgba(256,256,256,0.5);
 }
 .header-item-sticky {
@@ -154,4 +160,6 @@ h1 {
 #mid-1 {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  align-items: center;
 }
