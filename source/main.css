@@ -134,13 +134,13 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
-  width: 50%;
+  width: 80%;
   height: 200px;
   cursor: pointer;
 }
 h1 {
   text-align: center;
-  font-size: 69px;
+  font-size: 8em;
   color: white;
   text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
   font-family: "Archive";
