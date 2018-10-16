@@ -6,6 +6,24 @@
   font-family: "Ge Body";
   src: url("Ge Body.ttf");
 }
+@media screen and (max-width: 600px) {
+  .header-item-cont a {display: none;}
+  .header a.icon {
+    float: right;
+    display: block;
+  }
+  .header.responsive {position: absolute; height: 95vh; background-color: white;}
+  .header.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .header.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -31,6 +49,13 @@ body {
   -moz-user-select: none;
   -khtml-user-select: none;
   -ms-user-select: none;
+}
+.scroll {
+  overflow-y: hidden;
+}
+.big {
+  font-size: 50px;
+  text-align: center;
 }
 .top {
   width: 100vw;
@@ -153,6 +178,17 @@ body {
   width: 80%;
   height: 200px;
   cursor: pointer;
+}
+.icon {
+  color: gray;
+  position: absolute;
+  right:0;
+  top:0;
+  width: 50px;
+  height: 50px;
+  display: none;
+  font-size: 40px;
+  transition: 0.2s;
 }
 h1 {
   text-align: center;
