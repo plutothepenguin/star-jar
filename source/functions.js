@@ -40,3 +40,17 @@ async function autoSwitch() {
   }
 
 }
+
+function openMenu() {
+  $('.header').toggleClass('responsive');
+}
+
+
+/* shows loading spinner until loaded */
+
+window.onload = async function() {
+  /* maybe remove sleep on deployment */
+  /* await sleep(1000); */
+  $('.content').css('display', 'block');
+  $('.lds-ring').css('display', 'none');
+}

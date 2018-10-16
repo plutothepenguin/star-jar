@@ -1,3 +1,4 @@
+/* font imports */
 @font-face {
   font-family: "Archive";
   src: url("Archive.otf");
@@ -6,13 +7,18 @@
   font-family: "Ge Body";
   src: url("Ge Body.ttf");
 }
+/* responsive header */
 @media screen and (max-width: 600px) {
   .header-item-cont a {display: none;}
   .header a.icon {
     float: right;
     display: block;
   }
-  .header.responsive {position: absolute; height: 95vh; background-color: white;}
+  .header.responsive {
+    position: absolute; 
+    height: 90vh; 
+    background-color: white;
+  }
   .header.responsive a.icon {
     position: absolute;
     right: 0;
@@ -24,6 +30,46 @@
     text-align: left;
   }
 }
+
+/* loading spinners */
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #e0cca3;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #e0cca3 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* scrollbar */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -39,23 +85,33 @@
 ::-webkit-scrollbar-thumb:active {
   background-color: #e5c47e;
 }
+
+/* end of scrollbar */
 body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
   height: 2000px;
-  scroll-behavior: smooth;
   -webkit-user-select: none;
   -moz-user-select: none;
   -khtml-user-select: none;
   -ms-user-select: none;
 }
-.scroll {
-  overflow-y: hidden;
+.content {
+  display: none;
+  width: 100%;
+  height: 2000px;
+  position: absolute;
+  margin: 0;
+  padding: 0;
 }
-.big {
-  font-size: 50px;
-  text-align: center;
+.lds-ring {
+  position: absolute;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
 }
 .top {
   width: 100vw;
@@ -203,16 +259,47 @@ h1 {
   transform: translate(-50%, -50%);
   z-index: 10;
 }
-
-
-
-
-
-
-
+.scroll {
+  overflow-y: hidden;
+}
+.big {
+  font-size: 50px;
+  text-align: center;
+}
+.footer {
+  width: 100vw;
+  height: 300px;
+  background-color: #e0cca3;
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+  position: absolute;
+}
+.copyright {
+  text-align: center;
+  bottom: 0;
+  font-family: "Ge Body";
+  color: white;
+  font-size: 20px;
+}
 #mid-1 {
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
+}
+#mid-2 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  display: block;
+  border: 1px solid black;
+}
+.mid-2-cont {
+  width: 300px;
+  height: 400px;
+  background-color: red;
+  margin: 0 auto;
 }

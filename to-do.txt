@@ -1,11 +1,10 @@
- - add bootstrap (make mobile compatible)
+ - add bootstrap (make mobile compatible) - DONE-ish
  - let's encrypt
  - add google analytics
  - get icon
  - take sexy picture of jar
  - take 3 reg pics of jar (dif colors)
  - maybe add share buttons (open graph tags)
- - beige color??
  - header, footer, contact form (in footer maybe? or separate)
     - add white with black shadow or something as header
  - testemonials when we get them
@@ -19,3 +18,11 @@
  - loading spinner
  - fix clicking on slideshow while new pic is coming
  - dud add a super sexy 404 page with like a parallax and penguins and oh my god it'll be great
+ - change bg img to automatically crop on mobile
+ - make icons and replace menu icons with that
+ - footer
+ - content
+ - about
+ - contact form
+ - social media share buttons
+ - brag about stuff a lot
