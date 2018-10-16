@@ -26,15 +26,12 @@ async function autoSwitch() {
 
     if (i % 3 == 0) {
       Switch(3);
-      console.log("3");
     }
     else if ((i-2) % 3 == 0 || i == 2) {
       Switch(2);
-      console.log("2");
     }
     else {
       Switch(1);
-      console.log("1");
     }
     $('.loading').css('transition', '1s ease-out');
     $('.loading').css('width', '0px');
