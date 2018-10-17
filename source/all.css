@@ -34,7 +34,16 @@
     display: block;
   }
 }
-
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 3000px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -ms-user-select: none;
+}
 
 
 /* loading spinners */
@@ -74,6 +83,15 @@
   }
 }
 
+.lds-ring {
+  position: absolute;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+}
+
 /* scrollbar */
 
 ::-webkit-scrollbar {
@@ -91,38 +109,17 @@
 ::-webkit-scrollbar-thumb:active {
   background-color: #e5c47e;
 }
-
-/* end of scrollbar */
-body {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-  height: 5000px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -ms-user-select: none;
-}
 .content {
-  display: none;
-  width: 100%;
-  height: 5000px;
-  position: absolute;
-  margin: 0;
-  padding: 0;
-}
-.lds-ring {
-  position: absolute;
-  margin: 0 auto;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 30;
+  width: 100vw;
+  height: 3000px;
 }
 .top {
-  width: 100vw;
   height: 100vh;
+  width: 100vw;
+  position: relative;
+  z-index: 20;
 }
+
 .header {
   width: 100vw;
   height: 50px;
@@ -203,31 +200,6 @@ body {
   width: 100%;
   height: 100%;
 }
-
-.bg-img-cont {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  text-align: center;
-}
-.bg-img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  -webkit-filter: sepia(30%);
-  filter: sepia(30%);
-}
-.title-cont {
-  margin: 0 auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  width: 80%;
-  height: 200px;
-  cursor: pointer;
-}
 .icon {
   color: gray;
   position: absolute;
@@ -239,19 +211,6 @@ body {
   font-size: 40px;
   transition: 0.2s;
 }
-h1 {
-  text-align: center;
-  font-size: 7.9em;
-  color: white;
-  text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
-  font-family: "Archive";
-  margin: 0 auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-}
 .scroll {
   overflow-y: hidden;
 }
@@ -260,91 +219,6 @@ h1 {
   text-align: center;
   margin-top: 50px;
   width: 100%;
-}
-.footer {
-  width: 100vw;
-  height: 300px;
-  background-color: #e0cca3;
-  margin: 0;
-  padding: 0;
-  bottom: 0;
-  position: absolute;
-  border-top: 5px solid #e8dbc2;
-}
-.copyright {
-  text-align: center;
-  bottom: 0;
-  font-family: "Ge Body";
-  color: white;
-  font-size: 20px;
-}
-#mid-1 {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  background-color: #f94f31;
-}
-#mid-2 {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  position: relative;
-  display: block;
-  background-color: #43ef7c;
-}
-.features {
-  width: 1000px;
-  height: 400px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.mid-2-cont {
-  width: 300px;
-  height: 400px;
-  margin: 0 auto;
-  display: inline-block;
-  border: 3px solid white;
-  margin: 10px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.2s;
-  color: white;
-}
-.mid-2-cont:hover {
-  background-color: white;
-  margin-top: 7px;
-  box-shadow: 0 6px 4px -4px #AAA;
-  color: #43ef7c;
-}
-.mid-2-circle {
-  width: 250px;
-  height: 250px;
-  border-radius: 250px;
-  border: 3px solid white;
-  margin: 0 auto;
-  margin-top: 25px;
-  z-index: 5;
-  display: block;
-  pointer-events: none;
-}
-.featureImg {
-  width: 250px;
-  height: 250px;
-  clip-path: circle(125px at center);
-}
-.mid-2-text {
-  font-size: 21px;
-  font-family: "Ge Body";
-  letter-spacing: 2px;
-  height: 100px;
-  width: 300px;
-  line-height: 100px;
-  text-align: center;
-  bottom: 0;
 }
 
 @media screen and (max-width: 900px) {
@@ -358,4 +232,22 @@ h1 {
   #mid-2 {
     height: 200vh;
   }
+}
+
+.footer {
+  width: 100vw;
+  height: 300px;
+  background-color: #e0cca3;
+  margin: 0;
+  padding: 0;
+  top: calc(100% - 300px);
+  position: relative;
+  border-top: 5px solid #e8dbc2;
+}
+.copyright {
+  text-align: center;
+  bottom: 0;
+  font-family: "Ge Body";
+  color: white;
+  font-size: 20px;
 }

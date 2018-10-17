@@ -1,8 +1,8 @@
  - add bootstrap (make mobile compatible) - DONE-ish
  - let's encrypt
  - add google analytics
- - get icon
- - take sexy picture of jar
+ - get icon                               - DONE
+ - take sexy picture of jar               - DONE
  - take 3 reg pics of jar (dif colors)
  - maybe add share buttons (open graph tags)
  - header, footer, contact form (in footer maybe? or separate)
@@ -12,10 +12,10 @@
  - include call to actions
  - descriptions for everything
  - use <strong> for seo
- - alt tags for images
+ - alt tags for images                    - DONE
  - security (cloudflare?)
  - add a proper description
- - loading spinner
+ - loading spinner                        - DONE
  - fix clicking on slideshow while new pic is coming
  - dud add a super sexy 404 page with like a parallax and penguins and oh my god it'll be great
  - change bg img to automatically crop on mobile
@@ -26,3 +26,4 @@
  - contact form
  - social media share buttons
  - brag about stuff a lot
+ - change Ge Body font to something better

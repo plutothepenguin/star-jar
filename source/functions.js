@@ -50,7 +50,7 @@ function openMenu() {
 
 window.onload = async function() {
   /* maybe remove sleep on deployment */
-  /* await sleep(1000); */
+  await sleep(300);
   $('.content').css('display', 'block');
   $('.lds-ring').css('display', 'none');
 }
