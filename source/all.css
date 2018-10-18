@@ -110,14 +110,26 @@ body {
   background-color: #e5c47e;
 }
 .content {
-  width: 100vw;
-  height: 3000px;
+  display: none;
+  width: 100%;
+  height: 5000px;
+  position: absolute;
+  margin: 0;
+  padding: 0;
 }
 .top {
-  height: 100vh;
   width: 100vw;
-  position: relative;
-  z-index: 20;
+  height: 300px;
+}
+.title {
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 69px;
+  font-family: "Archive";
+  text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+  text-align: center;
 }
 
 .header {
@@ -221,18 +233,6 @@ body {
   width: 100%;
 }
 
-@media screen and (max-width: 900px) {
-  .header-item {
-    font-size: 14px;
-  }
-  .features {
-    height: 1300px;
-    width: 300px;
-  }
-  #mid-2 {
-    height: 200vh;
-  }
-}
 
 .footer {
   width: 100vw;
@@ -250,4 +250,16 @@ body {
   font-family: "Ge Body";
   color: white;
   font-size: 20px;
+}
+@media screen and (max-width: 900px) {
+  .header-item {
+    font-size: 14px;
+  }
+  .features {
+    height: 1300px;
+    width: 300px;
+  }
+  #mid-2 {
+    height: 200vh;
+  }
 }

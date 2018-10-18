@@ -11,10 +11,90 @@
   <title>About Us</title>
 
   <link rel="stylesheet" href="../source/all.css" type="text/css">
-  <link rel="stylesheet" href="../source/about.css" type="text/css">
   <link rel="icon" type="image/png" href="../source/img/icon.png">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-
+<style>
+.people {
+  width: 1000px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.person {
+  width: 300px;
+  height: 400px;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: inline-block;
+  border: 3px solid black;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  color: white;
+}
+.person:hover {
+  background-color: white;
+  margin-top: 7px;
+  box-shadow: 0 6px 4px -4px #AAA;
+  color: #43ef7c;
+}
+.person-circle {
+  width: 250px;
+  height: 250px;
+  border-radius: 250px;
+  border: 3px solid white;
+  margin: 0 auto;
+  margin-top: 25px;
+  z-index: 5;
+  display: block;
+  pointer-events: none;
+}
+.person-img {
+  width: 250px;
+  height: 250px;
+  clip-path: circle(125px at center);
+}
+.person-text {
+  font-size: 21px;
+  font-family: "Ge Body";
+  letter-spacing: 2px;
+  height: 100px;
+  width: 300px;
+  text-align: center;
+  bottom: 0;
+  color: black;
+  display: table-cell;
+  vertical-align: middle;
+}
+.top {
+  width: 100vw;
+  height: 300px;
+}
+.mid {
+  width: 100vw;
+  height: 600px;
+  position: relative;
+}
+.role {
+  font-size: 16px;
+  color: #AAA;
+}
+@media screen and (max-width: 1000px) {
+  .people {
+    height: 400vh;
+    width: 300px;
+  }
+  .mid {
+    height: 3100px;
+  }
+  .person {
+    display: block;
+  }
+}
+</style>
 </head>
 <body>
 <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
@@ -26,7 +106,7 @@
       </div>
       <div class="header-item-cont">
       	<a href="../index.html"><div class="header-item">Home</div></a>
-        <a href="about.html"><div class="header-item">About us</div></a>
+        <a href="about.html"><div class="header-item">About</div></a>
         <a href="features.html"><div class="header-item">Features</div></a>
         <a href="info.html"><div class="header-item">Info</div></a>
         <a href="contact.html"><div class="header-item">Contact</div></a>
@@ -35,13 +115,53 @@
         <i class="fa fa-bars"></i>
       </a>
     </div>
+    <h1 class="title">About Us</h1>
   </div>
+  <div class="mid"><div class="people"></div></div>
   <div class="footer">
   	<p class="copyright">Copyright Bob Ho Inc 2018</p>
   </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="../source/functions.js"></script>
 <script src="../source/all.js"></script>
-<script src="../source/about.js"></script>
+<script>
+var people = [
+  {
+    num: 1,
+    name: 'bob',
+    role: 'prez'
+  },
+  {
+    num: 2,
+    name: 'jeff',
+    role: 'it'
+  },
+  {
+    num: 3,
+    name: 'pingu',
+    role: 'heck'
+  },
+  {
+    num: 4,
+    name: 'gunter',
+    role: 'boop'
+  },
+  {
+    num: 5,
+    name: 'peng gang',
+    role: 'beep'
+  },
+  {
+    num: 6,
+    name: 'kool kid#2',
+    role: 'bop'
+  },
+]
+$(document).ready(function() {
+  for (var i = 0; i < people.length; i++) {
+    $('.people').append('<div class="person"><div class="person-circle"><img class="person-img" src="../source/img/peng' + people[i].num + '.jpg" alt="' + people[i].name + '"></div><div class="person-text">' + people[i].name + '<br><span class="role">' + people[i].role + '</span></div></div>');
+  }
+})
+
+</script>
 </body>
