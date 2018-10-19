@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form</title>
+	<style type="text/css">
+		form {
+			width: 50vw;
+			height: 600px;
+		}
+		.input {
+			width: 40%;
+			height: 20px;
+			border: 0;
+			border-right: 3px solid red;
+			display: inline-block;
+			float: right;
+
+		}
+		.form-cont {
+			display: block;
+			margin: 10px;
+		}
+
+	</style>
+</head>
+<body>
+<!-- go to serverlessforms.com again later to fix redirect url -->
+  <form method="POST" action="http://serverlessforms.com/api/form/667f47ee-e6f3-557f-a589-405c464dfb6e/form-response">
+  	<div class="form-cont">
+  		Name    <input type="text" name="name" class="input">
+  	</div>
+    <div class="form-cont">
+    	Email   <input type="text" name="email" class="input">
+    </div>
+    <div class="form-cont">
+    	Message <input type="text" name="message" class="input">
+    </div>
+    	<input type="submit" name="submit" class="submit">
+    </form>
+
+    <script type="text/javascript">
+    	var name = $('input[name=name]');
+    	name.change(function() {
+    		if (name.length > 0) {
+    			$(name.css('border-right', '3px solid green'));
+    		}
+    	})
+    </script>
+</body>
+</html>
