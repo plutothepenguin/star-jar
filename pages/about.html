@@ -55,6 +55,7 @@
 .person-img {
   width: 250px;
   height: 250px;
+  object-fit: cover;
   clip-path: circle(125px at center);
 }
 .person-text {
@@ -128,38 +129,123 @@
 var people = [
   {
     num: 1,
-    name: 'bob',
-    role: 'prez'
+    name: 'Omar Abdelhadi',
+    role: 'VP of Human Resources'
   },
   {
     num: 2,
-    name: 'jeff',
-    role: 'it'
+    name: 'Hamza Ahmad',
+    role: 'VP of Marketing'
   },
   {
     num: 3,
-    name: 'pingu',
-    role: 'heck'
+    name: 'Ali Ahmad',
+    role: 'Marketing'
   },
   {
     num: 4,
-    name: 'gunter',
-    role: 'boop'
+    name: 'Ismail Ayyoub',
+    role: 'Company Representative'
   },
   {
     num: 5,
-    name: 'peng gang',
-    role: 'beep'
+    name: 'Liam Bickford',
+    role: 'VP of Research and Development'
   },
   {
     num: 6,
-    name: 'kool kid#2',
-    role: 'bop'
+    name: 'Julianna Cates',
+    role: 'Production'
+  },
+  {
+    num: 7,
+    name: 'Melanie Drost',
+    role: 'Human Resources'
+  },
+  {
+    num: 8,
+    name: 'Malik El Tashani',
+    role: 'President'
+  },
+  {
+    num: 9,
+    name: 'Omid Ghafori',
+    role: 'Supreme Overlord'
+  },
+  {
+    num: 10,
+    name: 'Ryan Herzog',
+    role: 'VP of Information Technology'
+  },
+  {
+    num: 11,
+    name: 'Omar Hassano',
+    role: 'Sales'
+  },
+  {
+    num: 12,
+    name: 'Varshan Jeyanthan',
+    role: 'Accounting'
+  },
+  {
+    num: 13,
+    name: 'Mayee Kaneshalingam',
+    role: 'Human Resources'
+  },
+  {
+    num: 14,
+    name: 'Lindsay Klimchuk',
+    role: 'Production'
+  },
+  {
+    num: 15,
+    name: 'Hafssa Khdahir',
+    role: 'Production'
+  },
+  {
+    num: 16,
+    name: 'Bailey O\'Brien',
+    role: 'President'
+  },
+  {
+    num: 17,
+    name: 'Talia Oktu',
+    role: 'Marketing'
+  },
+  {
+    num: 18,
+    name: 'Sadeen Obaide',
+    role: 'Marketing'
+  },
+  {
+    num: 19,
+    name: 'Chanel Parikh',
+    role: 'VP of Sales'
+  },
+  {
+    num: 20,
+    name: 'Tareq Shahin',
+    role: 'Sales'
+  },
+  {
+    num: 21,
+    name: 'Ali Sadik',
+    role: 'Marketing'
+  },
+  {
+    num: 22,
+    name: 'Aaryan Thatai',
+    role: 'VP of Accounting'
+  },
+  {
+    num: 23,
+    name: 'Nima Tavassoli',
+    role: 'Marketing and Sales'
   },
 ]
 $(document).ready(function() {
   for (var i = 0; i < people.length; i++) {
-    $('.people').append('<div class="person"><div class="person-circle"><img class="person-img" src="../source/img/peng' + people[i].num + '.jpg" alt="' + people[i].name + '"></div><div class="person-text">' + people[i].name + '<br><span class="role">' + people[i].role + '</span></div></div>');
+    $('.people').append('<div class="person"><div class="person-circle"><img class="person-img" src="../source/img/' + people[i].num + '.jpg" alt="' + people[i].name + '"></div><div class="person-text">' + people[i].name + '<br><span class="role">' + people[i].role + '</span></div></div>');
   }
 })
 

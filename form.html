@@ -38,13 +38,31 @@
     	<input type="submit" name="submit" class="submit">
     </form>
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript">
-    	var name = $('input[name=name]');
-    	name.change(function() {
-    		if (name.length > 0) {
-    			$(name.css('border-right', '3px solid green'));
+    	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    	$('input[name=name]').on('input', function() {
+    		if ($('input[name=name]').length > 0) {
+    			$('input[name=name]').css('border-right', '3px solid green');
+    		}
+    		else if (!$('input[name=name]').val()) {
+    			$('input[name=name]').css('border-right', '3px solid red');
+    		}
+    	})
+    	function validateEmail(email) {
+    		var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    		return re.test(String(email).toLowerCase());
+		}
+    	$('input[name=email]').on('input', function() {
+    		if(!validateEmail($('input[name=email]').val()) || !$('input[name=email]').val()) {
+    			$('input[name=name]').css('border-right', '3px solid red');
+    		}
+    		else if (validateEmail($('input[name=email]').val()) || $('input[name=email]').length > 0){
+    			$('input[name=email]').css('border-right', '3px solid green');
     		}
     	})
     </script>
+
 </body>
 </html>
