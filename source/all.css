@@ -61,10 +61,10 @@ body {
   width: 51px;
   height: 51px;
   margin: 6px;
-  border: 6px solid #e0cca3;
+  border: 6px solid #e8ac17;
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #e0cca3 transparent transparent transparent;
+  border-color: #e8ac17 transparent transparent transparent;
 }
 .lds-ring div:nth-child(1) {
   animation-delay: -0.45s;
@@ -131,6 +131,7 @@ body {
   font-family: "Archive";
   text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
   text-align: center;
+  color: #e8ac17;
 }
 
 .header {
@@ -173,7 +174,7 @@ body {
   cursor: pointer;
 }
 .header-item:hover {
-  color: #e0cca3;
+  color: #e8ac17;
   text-shadow: 0px 0px 0px rgba(256,256,256,0.5);
 }
 .header-item-sticky {
