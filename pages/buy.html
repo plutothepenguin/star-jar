@@ -25,7 +25,7 @@
 form {
   width: 50vw;
   height: 200px;
-  background-color: #ffa50a;
+  background-color: #43ef7c;
   margin: 0 auto;
   position: absolute;
   top: 50%;
@@ -127,17 +127,17 @@ button[disabled] {
       	<a href="../index.html"><div class="header-item">Home</div></a>
         <a href="about.html"><div class="header-item">About</div></a>
         <a href="features.html"><div class="header-item">Features</div></a>
-        <a href="info.html"><div class="header-item">Info</div></a>
         <a href="contact.html"><div class="header-item">Contact</div></a>
+        <a href="buy.html"><div class="header-item">Buy</div></a>
       </div>
       <a href="javascript:void(0);" class="icon" onclick="openMenu()">
         <i class="fa fa-bars"></i>
       </a>
     </div>
-    <h1 class="title">Contact</h1>
+    <h1 class="title">Order a Jar!</h1>
   </div>
   <!-- go to serverlessforms.com again later to fix redirect url -->
-  <form method="POST" action="http://serverlessforms.com/api/form/667f47ee-e6f3-557f-a589-405c464dfb6e/form-response" autocomplete="off">
+  <form method="POST" action="http://serverlessforms.com/api/form/c05f5e2f-7a14-5251-b05d-691be78251b8/form-response" autocomplete="off">
   	<div class="form-cont active">
   		<p class="form-title">Name<p> <input type="text" name="name" class="input" required autofocus>
 			<button type="button" class="next" onclick="next(2)">></button>
@@ -148,14 +148,12 @@ button[disabled] {
 			<button type="button" class="next" onclick="next(3)">></button>
     </div>
     <div class="form-cont">
-    	<p class="form-title">Message</p> <input type="text" name="message" class="input" required>
+    	<p class="form-title">Order</p> <input type="text" name="message" class="input" required placeholder="Please include size (big/small) and colour (green/orange/purple)">
 			<button type="button" class="back" onclick="next(2)"><</button>
 			<input type="submit" name="submit" class="submit" value="Send">
     </div>
     </form>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="form.js"></script>
-		<script src="source/all.js"></script>
+    <p class="text" style="top: 500px">%{finance::charity-percentage} of proceeds go to <a href="https://candlelighters.net/">Candlelighters on purchase.</a></p>
   <div class="footer">
   	<p class="copyright">Copyright Bob Ho Inc 2018</p>
     <div class="share-cont">
@@ -172,7 +170,7 @@ button[disabled] {
 	function next(x) {
   $('.active').removeClass('active');
   $('form .form-cont:nth-child(' + x + ')').addClass('active');
-  $('form .form-cont:nth-child(' + x + ') input').focus();
+  $('form .form-cont:nth-child(' + x + ') input:not([type="submit"])').focus();
 }
 function validateEmail(email) {
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
