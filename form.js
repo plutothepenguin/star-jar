@@ -15,9 +15,10 @@ $('input').keydown(function (e){
 })
 $('input[name=message]').keydown(function(e) {
   if(e.keyCode == 13){
-      next($(this).index() + 2);
+      $('form').submit();
   }
 })
+
 $('.submit').click(function() {
   $('form').submit();
 })
