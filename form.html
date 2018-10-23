@@ -2,67 +2,30 @@
 <html>
 <head>
 	<title>form</title>
-	<style type="text/css">
-		form {
-			width: 50vw;
-			height: 600px;
-		}
-		.input {
-			width: 40%;
-			height: 20px;
-			border: 0;
-			border-right: 3px solid red;
-			display: inline-block;
-			float: right;
-
-		}
-		.form-cont {
-			display: block;
-			margin: 10px;
-		}
-
-	</style>
+	<link rel="stylesheet" href="form.css">
+	<link rel="stylesheet" href="source/all.css">
 </head>
 <body>
 <!-- go to serverlessforms.com again later to fix redirect url -->
   <form method="POST" action="http://serverlessforms.com/api/form/667f47ee-e6f3-557f-a589-405c464dfb6e/form-response">
-  	<div class="form-cont">
-  		Name    <input type="text" name="name" class="input">
+  	<div class="form-cont active">
+  		<p class="form-title">Name<p> <input type="text" name="name" class="input" required autofocus>
+			<button type="button" class="next" onclick="next(2)">></button>
   	</div>
     <div class="form-cont">
-    	Email   <input type="text" name="email" class="input">
+    	<p class="form-title">Email</p> <input type="email" name="email" class="input" required>
+			<button type="button" class="back" onclick="next(1)"><</button>
+			<button type="button" class="next" onclick="next(3)">></button>
     </div>
     <div class="form-cont">
-    	Message <input type="text" name="message" class="input">
+    	<p class="form-title">Message</p> <input type="text" name="message" class="input" required>
+			<button type="button" class="back" onclick="next(2)"><</button>
+			<input type="submit" name="submit" class="submit" value="Send">
     </div>
-    	<input type="submit" name="submit" class="submit">
+    	<!-- <input type="submit" name="submit" class="submit"> -->
     </form>
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript">
-    	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    	$('input[name=name]').on('input', function() {
-    		if ($('input[name=name]').length > 0) {
-    			$('input[name=name]').css('border-right', '3px solid green');
-    		}
-    		else if (!$('input[name=name]').val()) {
-    			$('input[name=name]').css('border-right', '3px solid red');
-    		}
-    	})
-    	function validateEmail(email) {
-    		var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    		return re.test(String(email).toLowerCase());
-		}
-    	$('input[name=email]').on('input', function() {
-    		if(!validateEmail($('input[name=email]').val()) || !$('input[name=email]').val()) {
-    			$('input[name=name]').css('border-right', '3px solid red');
-    		}
-    		else if (validateEmail($('input[name=email]').val()) || $('input[name=email]').length > 0){
-    			$('input[name=email]').css('border-right', '3px solid green');
-    		}
-    	})
-    </script>
-
+		<script src="form.js"></script>
+		<script src="source/all.js"></script>
 </body>
 </html>
