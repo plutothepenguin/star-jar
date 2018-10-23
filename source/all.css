@@ -38,12 +38,13 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  height: 3000px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -khtml-user-select: none;
   -ms-user-select: none;
   font-family: "Ge Body";
+  background-color: black;
+  height: 100%;
 }
 
 
@@ -96,13 +97,14 @@ body {
 /* scrollbar */
 
 ::-webkit-scrollbar {
+
   width: 8px;
 }
 ::-webkit-scrollbar-track-piece {
-  background-color: white;
+  background-color: rgb(0,0,0,0.2);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #e0cca3;
+  background-color: #e8ac17;
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: #d1b47b;
@@ -112,11 +114,10 @@ body {
 }
 .content {
   display: none;
-  width: 100%;
-  height: 5000px;
   position: absolute;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 .top {
   width: 100vw;
@@ -145,8 +146,7 @@ body {
   transition: 0.2s;
 }
 .sticky {
-  box-shadow: 0px 1px 3px 3px #AAA;
-  background-color: white;
+  background-color: black;
 }
 .header-item-cont {
   width: 100vw;
@@ -163,18 +163,17 @@ body {
   display: inline-block;
   text-align: center;
   line-height: 50px;
-  color: white;
+  color: #e8ac17;
   font-family: "Ge Body";
   font-size: 20px;
   transition: 0.6s;
   letter-spacing: 10px;
   z-index: 10;
   text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
-  color: #666;
   cursor: pointer;
 }
 .header-item:hover {
-  color: #e8ac17;
+  color: #43ef7c;
   text-shadow: 0px 0px 0px rgba(256,256,256,0.5);
 }
 .header-item-sticky {
@@ -182,7 +181,7 @@ body {
   height: 100%;
   text-align: center;
   line-height: 50px;
-  color: black;
+  color: #e8ac17;
   font-family: "Ge Body";
   font-size: 25px;
   transition: 0.2s;
@@ -190,7 +189,7 @@ body {
   text-shadow: 0;
 }
 .header-item-sticky:hover {
-  color: #e0cca3;
+  color: #43ef7c;
 }
 .logo-cont {
   width: 0;
@@ -239,19 +238,38 @@ body {
 .footer {
   width: 100vw;
   height: 300px;
-  background-color: #e0cca3;
+  background-color: black;
   margin: 0;
   padding: 0;
   top: calc(100% - 300px);
   position: relative;
-  border-top: 5px solid #e8dbc2;
+  border-top: 5px solid #43ef7c;
 }
 .copyright {
   text-align: center;
   bottom: 0;
   font-family: "Ge Body";
-  color: white;
+  color: #e8ac17;;
   font-size: 20px;
+}
+.share-cont {
+  width: 300px;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  margin: 25px auto;
+  margin-left: calc(50% - 150px);
+}
+svg {
+  width: 50px;
+  height: 50px;
+  fill: orange;
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+svg:hover {
+  fill: #ff9900;
 }
 @media screen and (max-width: 900px) {
   .header-item {

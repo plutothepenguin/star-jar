@@ -14,6 +14,14 @@
   <link rel="icon" type="image/png" href="../source/img/icon.png">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 <style>
+.content {
+  height: 3700px;
+}
+@media screen and (max-width: 600px) {
+  .content {
+    height: 7000px;
+  }
+}
 .people {
   width: 1000px;
   height: 400px;
@@ -38,7 +46,6 @@
 .person:hover {
   background-color: white;
   margin-top: 7px;
-  box-shadow: 0 6px 4px -4px #AAA;
   color: #43ef7c;
 }
 .person-circle {
@@ -66,7 +73,7 @@
   width: 300px;
   text-align: center;
   bottom: 0;
-  color: black;
+  color: #e8ac17;
   display: table-cell;
   vertical-align: middle;
 }
@@ -120,9 +127,10 @@
   </div>
   <div class="mid"><div class="people"></div></div>
   <div class="footer">
-  	<p class="copyright">Copyright Bob Ho Inc 2018</p>
+    <p class="copyright">Copyright Bob Ho Inc 2018</p>
   </div>
 </div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="../source/all.js"></script>
 <script>
@@ -130,7 +138,8 @@ var people = [
   {
     num: 1,
     name: 'Omar Abdelhadi',
-    role: 'VP of Human Resources'
+    role: 'VP of Human Resources',
+    title: 'test'
   },
   {
     num: 2,
@@ -245,7 +254,7 @@ var people = [
 ]
 $(document).ready(function() {
   for (var i = 0; i < people.length; i++) {
-    $('.people').append('<div class="person"><div class="person-circle"><img class="person-img" src="../source/img/' + people[i].num + '.jpg" alt="' + people[i].name + '"></div><div class="person-text">' + people[i].name + '<br><span class="role">' + people[i].role + '</span></div></div>');
+    $('.people').append('<div class="person" title="' + people[i].title + '"><div class="person-circle"><img class="person-img" src="../source/img/' + people[i].num + '.jpg" alt="' + people[i].name + '"></div><div class="person-text">' + people[i].name + '<br><span class="role">' + people[i].role + '</span></div></div>');
   }
 })
 
