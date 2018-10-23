@@ -8,13 +8,112 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <!--<meta name="description" content="Description">-->
-  <title>About Us</title>
+  <title>Purchase a Jar</title>
 
   <link rel="stylesheet" href="../source/all.css" type="text/css">
-  <link rel="stylesheet" href="../source/about.css" type="text/css">
   <link rel="icon" type="image/png" href="../source/img/icon.png">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
+  <style type="text/css">
+  body {
+  	height: 100vh;
+  }
+  .content {
+  	height: 100vh;
+    min-height: 100%;
+  }
+form {
+  width: 50vw;
+  height: 200px;
+  background-color: #ffa50a;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 25px;
+}
+.form-cont {
+  width: 80%;
+  display: none;
+  opacity: 0;
+  margin: 0 auto;
+  margin-top: -5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.2s;
+}
+.form-title {
+  color: white;
+  line-height: 15px;
+  font-size: 26px;
+  font-family: "Archive";
+}
+.input {
+  width: 100%;
+  height: 20px;
+  border: 0;
+  display: block;
+  border-radius: 7px;
+  padding: 3px;
+}
+.input:focus {
+  outline: none;
+  border: 2px solid #0BF;
+
+}
+.active {
+  display: block;
+  opacity: 1;
+}
+button:focus {
+  outline: none;
+}
+.next {
+  width: 50px;
+  height: 50px;
+  float: right;
+  color: white;
+  font-weight: bold;
+  border: 0;
+  background-color: rgb(0,0,0,0);
+  transition: 0.2s;
+  font-size: 40px;
+  cursor: pointer;
+}
+.back {
+  width: 50px;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  border: 0;
+  background-color: rgb(0,0,0,0);
+  transition: 0.2s;
+  font-size: 40px;
+  cursor: pointer;
+}
+.submit {
+  width: 100px;
+  height: 50px;
+  float: right;
+  color: white;
+  font-weight: bold;
+  border: 0;
+  background-color: rgb(0,0,0,0);
+  transition: 0.2s;
+  font-size: 26px;
+  cursor: pointer;
+  line-height: 30px;
+}
+button:disabled,
+button[disabled] {
+  color: #AAA;
+  cursor: default;
+}
+
+  </style>
 </head>
 <body>
 <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
@@ -35,8 +134,28 @@
         <i class="fa fa-bars"></i>
       </a>
     </div>
-    <h1 class="title">Features</h1>
+    <h1 class="title">Contact</h1>
   </div>
+  <!-- go to serverlessforms.com again later to fix redirect url -->
+  <form method="POST" action="http://serverlessforms.com/api/form/667f47ee-e6f3-557f-a589-405c464dfb6e/form-response" autocomplete="off">
+  	<div class="form-cont active">
+  		<p class="form-title">Name<p> <input type="text" name="name" class="input" required autofocus>
+			<button type="button" class="next" onclick="next(2)">></button>
+  	</div>
+    <div class="form-cont">
+    	<p class="form-title">Email</p> <input type="email" name="email" class="input" required>
+			<button type="button" class="back" onclick="next(1)"><</button>
+			<button type="button" class="next" onclick="next(3)">></button>
+    </div>
+    <div class="form-cont">
+    	<p class="form-title">Message</p> <input type="text" name="message" class="input" required>
+			<button type="button" class="back" onclick="next(2)"><</button>
+			<input type="submit" name="submit" class="submit" value="Send">
+    </div>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="form.js"></script>
+		<script src="source/all.js"></script>
   <div class="footer">
   	<p class="copyright">Copyright Bob Ho Inc 2018</p>
     <div class="share-cont">
@@ -49,5 +168,51 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="../source/all.js"></script>
-<script src="../source/features.js"></script>
+<script type="text/javascript">
+	function next(x) {
+  $('.active').removeClass('active');
+  $('form .form-cont:nth-child(' + x + ')').addClass('active');
+  $('form .form-cont:nth-child(' + x + ') input').focus();
+}
+function validateEmail(email) {
+  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+$('input').keydown(function (e){
+    if(e.keyCode == 13){
+        next($(this).index() + 2);
+    }
+})
+$('input[name=message]').keydown(function(e) {
+  if(e.keyCode == 13){
+      $('form').submit();
+  }
+})
+$('input[name=message]').keyup(function(e) {
+    while($(this).outerHeight() < this.scrollHeight + parseFloat($(this).css("borderTopWidth")) + parseFloat($(this).css("borderBottomWidth"))) {
+        $(this).height($(this).height()+1);
+    };
+});
+$('.submit').click(function() {
+  $('form').submit();
+})
+$('.next').prop('disabled', true);
+$('input[name=name]').on('input', function() {
+  if ($(this).val().length > 0) {
+    $('.active .next').prop('disabled', false);
+  }
+  else if (!$(this).val()) {
+    $('.active .next').prop('disabled', true);
+  }
+})
+  $('input[name=email]').on('input', function() {
+    if (!validateEmail($(this).val()) || !$(this).val()) {
+      $('.active .next').prop('disabled', true);
+    }
+    else {
+      $('.active .next').prop('disabled', false);
+    }
+  })
+
+</script>
 </body>

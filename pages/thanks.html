@@ -8,13 +8,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <!--<meta name="description" content="Description">-->
-  <title>About Us</title>
+  <title>Thank you! ♡</title>
 
   <link rel="stylesheet" href="../source/all.css" type="text/css">
-  <link rel="stylesheet" href="../source/about.css" type="text/css">
   <link rel="icon" type="image/png" href="../source/img/icon.png">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
+  <style type="text/css">
+  body {
+  	height: 100vh;
+  }
+  .content {
+  	height: 100vh;
+    min-height: 100%;
+  }
+.thanks {
+  position: absolute;
+  top: 300px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+  </style>
 </head>
 <body>
 <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
@@ -35,7 +51,8 @@
         <i class="fa fa-bars"></i>
       </a>
     </div>
-    <h1 class="title">Features</h1>
+    <h1 class="title">Thank you!</h1>
+    <p class="thanks">talk about things and how their purchase is helping children with cancer and other stuff</p>
   </div>
   <div class="footer">
   	<p class="copyright">Copyright Bob Ho Inc 2018</p>
@@ -49,5 +66,51 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="../source/all.js"></script>
-<script src="../source/features.js"></script>
+<script type="text/javascript">
+	function next(x) {
+  $('.active').removeClass('active');
+  $('form .form-cont:nth-child(' + x + ')').addClass('active');
+  $('form .form-cont:nth-child(' + x + ') input').focus();
+}
+function validateEmail(email) {
+  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+$('input').keydown(function (e){
+    if(e.keyCode == 13){
+        next($(this).index() + 2);
+    }
+})
+$('input[name=message]').keydown(function(e) {
+  if(e.keyCode == 13){
+      $('form').submit();
+  }
+})
+$('input[name=message]').keyup(function(e) {
+    while($(this).outerHeight() < this.scrollHeight + parseFloat($(this).css("borderTopWidth")) + parseFloat($(this).css("borderBottomWidth"))) {
+        $(this).height($(this).height()+1);
+    };
+});
+$('.submit').click(function() {
+  $('form').submit();
+})
+$('.next').prop('disabled', true);
+$('input[name=name]').on('input', function() {
+  if ($(this).val().length > 0) {
+    $('.active .next').prop('disabled', false);
+  }
+  else if (!$(this).val()) {
+    $('.active .next').prop('disabled', true);
+  }
+})
+  $('input[name=email]').on('input', function() {
+    if (!validateEmail($(this).val()) || !$(this).val()) {
+      $('.active .next').prop('disabled', true);
+    }
+    else {
+      $('.active .next').prop('disabled', false);
+    }
+  })
+
+</script>
 </body>

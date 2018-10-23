@@ -147,6 +147,7 @@ body {
 }
 .sticky {
   background-color: black;
+  border-bottom: 3px solid #e8ac17;
 }
 .header-item-cont {
   width: 100vw;
